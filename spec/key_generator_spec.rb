@@ -14,6 +14,13 @@ RSpec.describe Key do
      expect(key.generate_key.class).to eq(String)
    end
 
+   it 'can return a key with padded/leading zeros' do
+     key = Key.new
+     allow(key).to receive(:rand).and_return(6421)
+
+     expect(key.generate_key).to eq("06421")
+   end
+
    it 'can convert key into an integer' do
      key = Key.new
 
