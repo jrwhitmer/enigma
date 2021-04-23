@@ -12,7 +12,7 @@ RSpec.describe Key do
     end
 
     it 'has attributes' do
-      allow_any_instance_of(Key).to receive(:generate_key).and_return("04837")
+      allow_any_instance_of(Key).to receive(:rand).and_return(4837)
       key = Key.new
 
       expect(key.a_key).to eq(4)
