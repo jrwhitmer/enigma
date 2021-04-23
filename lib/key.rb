@@ -1,4 +1,8 @@
+require './lib/key_generator'
+
 class Key
+
+include KeyGenerator
 
   def initialize
 

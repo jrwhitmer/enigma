@@ -4,10 +4,8 @@ require 'rspec'
 
 RSpec.describe Key do
 
-   context 'Key Generator exists within Key class' do
-     key = Key.new
-
-     expect(key < KeyGenerator).to eq(true)
+   it 'Key Generator exists within Key class' do
+     expect(Key.ancestors).to include(KeyGenerator)
    end
 
 
