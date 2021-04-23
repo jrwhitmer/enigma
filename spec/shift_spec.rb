@@ -46,7 +46,7 @@ RSpec.describe Shift do
       shift = Shift.new(key, offset)
       text = "This is test text"
 
-      expect(shift.shift_by_a(text)).to eq([26, 14, 15, 25, 33, 15, 25, 33, 26, 11, 25, 26, 33, 26, 11, 30, 26])
+      expect(shift.shift_by_a(text)).to eq([26, 14, 15, 25, 6, 15, 25, 6, 26, 11, 25, 26, 6, 26, 11, 3, 26])
     end
 
     it 'can translate text shifted by a_shift amount' do
@@ -55,8 +55,8 @@ RSpec.describe Shift do
       offset = Offset.new("05-16-1998")
       shift = Shift.new(key, offset)
       text = "This is test text"
-
-      expect(shift.translate_a_values_to_text).to eq("")
+!
+      expect(shift.translate_a_values_to_text(text)).to eq("znoyfoyfzkyzfzkcz")
     end
   end
 
