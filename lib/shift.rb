@@ -37,7 +37,7 @@ class Shift
     end
   end
 
-  def translate_a_values_to_text(shifted_values)
+  def translate_a_values_to_text
   end
 
 end
