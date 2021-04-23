@@ -1,7 +1,7 @@
 class Key
 
-  def initialize(key)
-    @key = key
+  def initialize
+
   end
 
   def a_key
