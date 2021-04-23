@@ -11,7 +11,7 @@ RSpec.describe Offset do
       expect(offset).to be_instance_of(Offset)
     end
 
-    it 'has attributes' do
+    xit 'has attributes' do
       offset = Offset.new
 
       expect(offset.offset_a).to eq()
