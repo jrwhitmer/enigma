@@ -32,6 +32,12 @@ class Shift
   end
 
   def shift_by_a(text)
-    translate_text_to_values(text)
+    shifted_translation = translate_text_to_values(text).map do |character_value|
+      character_value + a_shift.remainder(27)
+    end
   end
+
+  def translate_a_values_to_text(shifted_values)
+  end
+
 end

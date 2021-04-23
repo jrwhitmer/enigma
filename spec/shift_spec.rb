@@ -39,15 +39,17 @@ RSpec.describe Shift do
       expect(shift.translate_text_to_values(text)).to eq([20, 8, 9, 19, 27, 9, 19, 27, 20, 5, 19, 20, 27, 20, 5, 24, 20])
     end
 
-    it 'can shift text by a_shift amount' do
+    it 'can shift text by a_shift amount(integer array)' do
       allow_any_instance_of(Key).to receive(:rand).and_return(4837)
       key = Key.new
       offset = Offset.new("05-16-1998")
       shift = Shift.new(key, offset)
       text = "This is test text"
 
-      expect(shift.shift_by_a(text)).to eq("")
+      expect(shift.shift_by_a(text)).to eq([26, 14, 15, 25, 33, 15, 25, 33, 26, 11, 25, 26, 33, 26, 11, 30, 26])
     end
+
+    
   end
 
 end
