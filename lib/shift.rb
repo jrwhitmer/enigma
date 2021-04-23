@@ -47,4 +47,6 @@ class Shift
     end.join
   end
 
+
+
 end

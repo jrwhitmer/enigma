@@ -55,9 +55,69 @@ RSpec.describe Shift do
       offset = Offset.new("05-16-1998")
       shift = Shift.new(key, offset)
       text = "This is test text"
-!
+
       expect(shift.translate_a_values_to_text(text)).to eq("znoyfoyfzkyzfzkcz")
     end
+  end
+
+  it 'can shift text by b_shift amount(integer array)' do
+    allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+    key = Key.new
+    offset = Offset.new("05-16-1998")
+    shift = Shift.new(key, offset)
+    text = "This is test text"
+
+    expect(shift.shift_by_b(text)).to eq()
+  end
+
+  it 'can translate text shifted by b_shift amount' do
+    allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+    key = Key.new
+    offset = Offset.new("05-16-1998")
+    shift = Shift.new(key, offset)
+    text = "This is test text"
+
+    expect(shift.translate_b_values_to_text(text)).to eq("")
+  end
+
+  it 'can shift text by c_shift amount(integer array)' do
+    allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+    key = Key.new
+    offset = Offset.new("05-16-1998")
+    shift = Shift.new(key, offset)
+    text = "This is test text"
+
+    expect(shift.shift_by_c(text)).to eq()
+  end
+
+  it 'can translate text shifted by c_shift amount' do
+    allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+    key = Key.new
+    offset = Offset.new("05-16-1998")
+    shift = Shift.new(key, offset)
+    text = "This is test text"
+
+    expect(shift.translate_c_values_to_text(text)).to eq("")
+  end
+
+  it 'can shift text by d_shift amount(integer array)' do
+    allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+    key = Key.new
+    offset = Offset.new("05-16-1998")
+    shift = Shift.new(key, offset)
+    text = "This is test text"
+
+    expect(shift.shift_by_d(text)).to eq()
+  end
+
+  it 'can translate text shifted by d_shift amount' do
+    allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+    key = Key.new
+    offset = Offset.new("05-16-1998")
+    shift = Shift.new(key, offset)
+    text = "This is test text"
+
+    expect(shift.translate_d_values_to_text(text)).to eq("")
   end
 
 end
