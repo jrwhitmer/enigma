@@ -4,20 +4,19 @@ require 'rspec'
 RSpec.describe Key do
 
   context 'instantiation' do
+    key = Key.new
 
     it 'exists' do
-      key = Key.new
-
       expect(key).to be_instance_of(Key)
     end
 
-    xit 'has attributes' do
-      key = Key.new
+    it 'has attributes' do
+      allow(key).to receive(:rand).and_return(4837)
 
-      expect(key.a_key).to eq
-      expect(key.b_key).to eq
-      expect(key.c_key).to eq
-      expect(key.d_key).to eq
+      expect(key.a_key).to eq(4)
+      expect(key.b_key).to eq(48)
+      expect(key.c_key).to eq(83)
+      expect(key.d_key).to eq(37)
     end
 
   end
