@@ -8,11 +8,16 @@ RSpec.describe Key do
      expect(Key.ancestors).to include(KeyGenerator)
    end
 
-   it 'can generate an integer key' do
+   it 'can generate a key string' do
      key = Key.new
 
-     expect(key.generate_key.class).to eq(Integer)
+     expect(key.generate_key.class).to eq(String)
    end
 
+   it 'can convert key into an integer' do
+     key = Key.new
+
+     expect(key.converted_key.class).to eq(Integer)
+   end
 
 end
