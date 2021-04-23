@@ -1,3 +1,8 @@
 module KeyGenerator
 
-end 
+def generate_key
+
+end
+
+
+end
