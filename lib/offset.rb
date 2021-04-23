@@ -4,9 +4,10 @@ require './lib/offset_generator'
 class Offset
 
   include OffsetGenerator
-  
-  def initialize
 
+  def initialize(date)
+    @offset = generate_offset(date)
   end
+
 
 end

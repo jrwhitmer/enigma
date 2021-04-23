@@ -9,8 +9,8 @@ RSpec.describe Offset do
   end
 
   it 'can generate an offset from a date' do
-    offset = Offset.new
     date = "16-05-2003"
+    offset = Offset.new(date)
     expect(offset.generate_offset(date).class).to eq(Integer)
     expect(offset.generate_offset(date)).to eq(2009)
   end
