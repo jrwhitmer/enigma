@@ -27,4 +27,16 @@ RSpec.describe Shift do
     end
   end
 
+  context 'methods' do
+    allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+    key = Key.new
+    offset = Offset.new("05-16-1998")
+    shift = Shift.new(key, offset)
+    text = "This is test text"
+
+    it 'can shift text by a_shift amount' do
+      expect(shift.shift_by_a(text).to eq()
+    end
+  end
+
 end
