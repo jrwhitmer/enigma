@@ -1,4 +1,3 @@
-require 'date'
 require './lib/offset_generator'
 
 class Offset
