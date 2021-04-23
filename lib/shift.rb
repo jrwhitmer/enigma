@@ -47,6 +47,39 @@ class Shift
     end.join
   end
 
+  def shift_by_b(text)
+    translate_text_to_values(text).map do |character_value|
+      (character_value + b_shift.remainder(27)).remainder(27)
+    end
+  end
 
+  def translate_b_values_to_text(text)
+    translated = shift_by_b(text).map do |character_value|
+      value_set[character_value]
+    end.join
+  end
+
+  def shift_by_c(text)
+    translate_text_to_values(text).map do |character_value|
+      (character_value + c_shift.remainder(27)).remainder(27)
+    end
+  end
+
+  def translate_c_values_to_text(text)
+    translated = shift_by_c(text).map do |character_value|
+      value_set[character_value]
+    end.join
+  end
+  def shift_by_d(text)
+    translate_text_to_values(text).map do |character_value|
+      (character_value + d_shift.remainder(27)).remainder(27)
+    end
+  end
+
+  def translate_d_values_to_text(text)
+    translated = shift_by_d(text).map do |character_value|
+      value_set[character_value]
+    end.join
+  end
 
 end

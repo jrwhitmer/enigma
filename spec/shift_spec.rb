@@ -67,7 +67,7 @@ RSpec.describe Shift do
     shift = Shift.new(key, offset)
     text = "This is test text"
 
-    expect(shift.shift_by_b(text)).to eq()
+    expect(shift.shift_by_b(text)).to eq([14, 2, 3, 13, 21, 3, 13, 21, 14, 26, 13, 14, 21, 14, 26, 18, 14])
   end
 
   it 'can translate text shifted by b_shift amount' do
@@ -77,7 +77,7 @@ RSpec.describe Shift do
     shift = Shift.new(key, offset)
     text = "This is test text"
 
-    expect(shift.translate_b_values_to_text(text)).to eq("")
+    expect(shift.translate_b_values_to_text(text)).to eq("nbcmucmunzmnunzrn")
   end
 
   it 'can shift text by c_shift amount(integer array)' do
@@ -87,7 +87,7 @@ RSpec.describe Shift do
     shift = Shift.new(key, offset)
     text = "This is test text"
 
-    expect(shift.shift_by_c(text)).to eq()
+    expect(shift.shift_by_c(text)).to eq([22, 10, 11, 21, 2, 11, 21, 2, 22, 7, 21, 22, 2, 22, 7, 26, 22])
   end
 
   it 'can translate text shifted by c_shift amount' do
@@ -97,7 +97,7 @@ RSpec.describe Shift do
     shift = Shift.new(key, offset)
     text = "This is test text"
 
-    expect(shift.translate_c_values_to_text(text)).to eq("")
+    expect(shift.translate_c_values_to_text(text)).to eq("vjkubkubvguvbvgzv")
   end
 
   it 'can shift text by d_shift amount(integer array)' do
@@ -107,7 +107,7 @@ RSpec.describe Shift do
     shift = Shift.new(key, offset)
     text = "This is test text"
 
-    expect(shift.shift_by_d(text)).to eq()
+    expect(shift.shift_by_d(text)).to eq([7, 22, 23, 6, 14, 23, 6, 14, 7, 19, 6, 7, 14, 7, 19, 11, 7])
   end
 
   it 'can translate text shifted by d_shift amount' do
@@ -117,7 +117,7 @@ RSpec.describe Shift do
     shift = Shift.new(key, offset)
     text = "This is test text"
 
-    expect(shift.translate_d_values_to_text(text)).to eq("")
+    expect(shift.translate_d_values_to_text(text)).to eq("gvwfnwfngsfgngskg")
   end
 
 end
