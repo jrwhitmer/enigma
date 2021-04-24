@@ -1,6 +1,17 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/jacqwhitmer/REPOS/turing/mod1/projects/enigma/lib/enigma.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/jacqwhitmer/REPOS/turing/mod1/projects/enigma/spec/key_generator_spec.rb": {
         "lines": [
           1,
@@ -433,6 +444,6 @@
         ]
       }
     },
-    "timestamp": 1619210048
+    "timestamp": 1619302341
   }
 }
