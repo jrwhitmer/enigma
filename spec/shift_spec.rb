@@ -121,4 +121,14 @@ RSpec.describe Shift do
     expect(shift.translate_d_values_to_text(text)).to eq("gvwfnwfngsfgngskg")
   end
 
+  it 'can check if character exists in our set' do
+    allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+    key = Key.new
+    offset = Offset.new("05-16-1998")
+    shift = Shift.new(key, offset)
+    text = "This is test text!"
+
+    expect(shift.matching_character?(text[-1])).to eq(false)
+  end
+
 end
