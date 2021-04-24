@@ -35,7 +35,11 @@ class Shift
 
   def translate_text_to_values(text)
     text.chars.map do |character|
-      character_set[character.downcase]
+      if matching_character?(character)
+        character_set[character.downcase]
+      else
+        character
+      end
      end
   end
 
