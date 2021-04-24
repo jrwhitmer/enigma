@@ -1,7 +1,9 @@
 class Enigma
 
-  def initialize
-
-  end 
+  def initialize(message, key, date)
+    @message = message
+    @key = key
+    @date = date
+  end
 
 end
