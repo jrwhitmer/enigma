@@ -6,4 +6,9 @@ class Enigma
     @date = date
   end
 
+  def encrypt
+    
+
+  end
+
 end
