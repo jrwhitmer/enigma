@@ -15,7 +15,7 @@ RSpec.describe Enigma do
   end
 
   context 'methods' do
-    it 'can encrypt text' do
+    xit 'can encrypt text' do
       allow_any_instance_of(Key).to receive(:rand).and_return(4837)
       message = "Blah di bleh!"
       key_1 = Key.new
