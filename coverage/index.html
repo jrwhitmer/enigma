@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-04-24T18:36:28-04:00">2021-04-24T18:36:28-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-04-24T18:37:56-04:00">2021-04-24T18:37:56-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         5.79
+         5.76
        </span>
     </span> hits/line
     )
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>234</b> relevant lines,
-    <span class="green"><b>234</b> lines covered</span> and
+    <b>236</b> relevant lines,
+    <span class="green"><b>236</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -128,11 +128,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#749b2911bb982515989c4510edd91e3327fa3b34" class="src_link" title="lib/shift.rb">lib/shift.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">86</td>
-            <td class="cell--number">43</td>
-            <td class="cell--number">43</td>
+            <td class="cell--number">90</td>
+            <td class="cell--number">45</td>
+            <td class="cell--number">45</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">18.16</td>
+            <td class="cell--number">17.42</td>
             
           </tr>
         
@@ -1279,8 +1279,8 @@
     
 
     <div class="t-line-summary">
-      <b>43</b> relevant lines.
-      <span class="green"><b>43</b> lines covered</span> and
+      <b>45</b> relevant lines.
+      <span class="green"><b>45</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1556,8 +1556,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="154" data-linenumber="25">
-            <span class="hits">154</span>
+          <li class="covered" data-hits="155" data-linenumber="25">
+            <span class="hits">155</span>
             
 
             
@@ -1639,29 +1639,29 @@
 
             
 
-            <code class="ruby">  def translate_text_to_values(text)</code>
+            <code class="ruby">  def matching_character?(character)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="9" data-linenumber="33">
-            <span class="hits">9</span>
+          <li class="covered" data-hits="1" data-linenumber="33">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    text.chars.map do |character|</code>
+            <code class="ruby">    !character_set[character].nil?</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="153" data-linenumber="34">
-            <span class="hits">153</span>
+          <li class="never" data-hits="" data-linenumber="34">
+            
             
 
             
 
-            <code class="ruby">      character_set[character.downcase]</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -1672,62 +1672,62 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="36">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def translate_text_to_values(text)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="9" data-linenumber="37">
+            <span class="hits">9</span>
+            
+
+            
+
+            <code class="ruby">    text.chars.map do |character|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="153" data-linenumber="38">
+            <span class="hits">153</span>
+            
+
+            
+
+            <code class="ruby">      character_set[character.downcase]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="39">
+            
+            
+
+            
+
             <code class="ruby">     end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="36">
+          <li class="never" data-hits="" data-linenumber="40">
             
             
 
             
 
             <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="37">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="38">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def shift_by_a(text)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="39">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">    translate_text_to_values(text).map do |character_value|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="34" data-linenumber="40">
-            <span class="hits">34</span>
-            
-
-            
-
-            <code class="ruby">      (character_value + a_shift.remainder(27)).remainder(27)</code>
           </li>
         </div>
       
@@ -1738,62 +1738,62 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="42">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def shift_by_a(text)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="43">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    translate_text_to_values(text).map do |character_value|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="34" data-linenumber="44">
+            <span class="hits">34</span>
+            
+
+            
+
+            <code class="ruby">      (character_value + a_shift.remainder(27)).remainder(27)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="45">
+            
+            
+
+            
+
             <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="42">
+          <li class="never" data-hits="" data-linenumber="46">
             
             
 
             
 
             <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="43">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="44">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def translate_a_values_to_text(text)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="45">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    translated = shift_by_a(text).map do |character_value|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="17" data-linenumber="46">
-            <span class="hits">17</span>
-            
-
-            
-
-            <code class="ruby">      value_set[character_value]</code>
           </li>
         </div>
       
@@ -1804,62 +1804,62 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="48">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def translate_a_values_to_text(text)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="49">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    translated = shift_by_a(text).map do |character_value|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="17" data-linenumber="50">
+            <span class="hits">17</span>
+            
+
+            
+
+            <code class="ruby">      value_set[character_value]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="51">
+            
+            
+
+            
+
             <code class="ruby">    end.join</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="48">
+          <li class="never" data-hits="" data-linenumber="52">
             
             
 
             
 
             <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="49">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="50">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def shift_by_b(text)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="51">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">    translate_text_to_values(text).map do |character_value|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="34" data-linenumber="52">
-            <span class="hits">34</span>
-            
-
-            
-
-            <code class="ruby">      (character_value + b_shift.remainder(27)).remainder(27)</code>
           </li>
         </div>
       
@@ -1870,62 +1870,62 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="54">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def shift_by_b(text)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="55">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    translate_text_to_values(text).map do |character_value|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="34" data-linenumber="56">
+            <span class="hits">34</span>
+            
+
+            
+
+            <code class="ruby">      (character_value + b_shift.remainder(27)).remainder(27)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="57">
+            
+            
+
+            
+
             <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="54">
+          <li class="never" data-hits="" data-linenumber="58">
             
             
 
             
 
             <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="55">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="56">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def translate_b_values_to_text(text)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="57">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    translated = shift_by_b(text).map do |character_value|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="17" data-linenumber="58">
-            <span class="hits">17</span>
-            
-
-            
-
-            <code class="ruby">      value_set[character_value]</code>
           </li>
         </div>
       
@@ -1936,62 +1936,62 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="60">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def translate_b_values_to_text(text)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="61">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    translated = shift_by_b(text).map do |character_value|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="17" data-linenumber="62">
+            <span class="hits">17</span>
+            
+
+            
+
+            <code class="ruby">      value_set[character_value]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="63">
+            
+            
+
+            
+
             <code class="ruby">    end.join</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="60">
+          <li class="never" data-hits="" data-linenumber="64">
             
             
 
             
 
             <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="61">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="62">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def shift_by_c(text)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="63">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">    translate_text_to_values(text).map do |character_value|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="34" data-linenumber="64">
-            <span class="hits">34</span>
-            
-
-            
-
-            <code class="ruby">      (character_value + c_shift.remainder(27)).remainder(27)</code>
           </li>
         </div>
       
@@ -2002,111 +2002,23 @@
 
             
 
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="66">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="67">
-            
-            
-
-            
-
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="68">
+          <li class="covered" data-hits="1" data-linenumber="66">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def translate_c_values_to_text(text)</code>
+            <code class="ruby">  def shift_by_c(text)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="69">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    translated = shift_by_c(text).map do |character_value|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="17" data-linenumber="70">
-            <span class="hits">17</span>
-            
-
-            
-
-            <code class="ruby">      value_set[character_value]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="71">
-            
-            
-
-            
-
-            <code class="ruby">    end.join</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="72">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="73">
-            
-            
-
-            
-
-            <code class="ruby">  </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="74">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def shift_by_d(text)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="75">
+          <li class="covered" data-hits="2" data-linenumber="67">
             <span class="hits">2</span>
             
 
@@ -2117,18 +2029,18 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="34" data-linenumber="76">
+          <li class="covered" data-hits="34" data-linenumber="68">
             <span class="hits">34</span>
             
 
             
 
-            <code class="ruby">      (character_value + d_shift.remainder(27)).remainder(27)</code>
+            <code class="ruby">      (character_value + c_shift.remainder(27)).remainder(27)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="77">
+          <li class="never" data-hits="" data-linenumber="69">
             
             
 
@@ -2139,7 +2051,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="78">
+          <li class="never" data-hits="" data-linenumber="70">
             
             
 
@@ -2150,7 +2062,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="79">
+          <li class="never" data-hits="" data-linenumber="71">
             
             
 
@@ -2161,29 +2073,29 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="80">
+          <li class="covered" data-hits="1" data-linenumber="72">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def translate_d_values_to_text(text)</code>
+            <code class="ruby">  def translate_c_values_to_text(text)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="81">
+          <li class="covered" data-hits="1" data-linenumber="73">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    translated = shift_by_d(text).map do |character_value|</code>
+            <code class="ruby">    translated = shift_by_c(text).map do |character_value|</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="17" data-linenumber="82">
+          <li class="covered" data-hits="17" data-linenumber="74">
             <span class="hits">17</span>
             
 
@@ -2194,7 +2106,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="83">
+          <li class="never" data-hits="" data-linenumber="75">
             
             
 
@@ -2205,7 +2117,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="84">
+          <li class="never" data-hits="" data-linenumber="76">
             
             
 
@@ -2216,7 +2128,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="85">
+          <li class="never" data-hits="" data-linenumber="77">
             
             
 
@@ -2227,7 +2139,139 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="86">
+          <li class="covered" data-hits="1" data-linenumber="78">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def shift_by_d(text)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="79">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    translate_text_to_values(text).map do |character_value|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="34" data-linenumber="80">
+            <span class="hits">34</span>
+            
+
+            
+
+            <code class="ruby">      (character_value + d_shift.remainder(27)).remainder(27)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="81">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="82">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="83">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="84">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def translate_d_values_to_text(text)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="85">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    translated = shift_by_d(text).map do |character_value|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="17" data-linenumber="86">
+            <span class="hits">17</span>
+            
+
+            
+
+            <code class="ruby">      value_set[character_value]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="87">
+            
+            
+
+            
+
+            <code class="ruby">    end.join</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="88">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="89">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="90">
             
             
 

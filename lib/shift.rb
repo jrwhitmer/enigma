@@ -29,6 +29,10 @@ class Shift
     value_set = {1 => "a", 2 => "b", 3 => "c", 4 => "d", 5 => "e", 6 => "f", 7 => "g", 8  => "h", 9 => "i", 10 => "j", 11 => "k", 12 => "l", 13 => "m", 14 => "n", 15 => "o", 16 => "p", 17 => "q", 18 => "r", 19 => "s", 20 => "t", 21 => "u", 22  => "v", 23 => "w", 24 => "x", 25 => "y", 26 => "z", 27 => " "}
   end
 
+  def matching_character?(character)
+    !character_set[character].nil?
+  end
+
   def translate_text_to_values(text)
     text.chars.map do |character|
       character_set[character.downcase]
@@ -70,7 +74,7 @@ class Shift
       value_set[character_value]
     end.join
   end
-  
+
   def shift_by_d(text)
     translate_text_to_values(text).map do |character_value|
       (character_value + d_shift.remainder(27)).remainder(27)
