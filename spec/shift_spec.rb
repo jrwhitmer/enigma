@@ -1,7 +1,8 @@
+require './spec/spec_helper'
 require './lib/shift'
 require './lib/key'
 require './lib/offset'
-require 'rspec'
+
 
 RSpec.describe Shift do
 

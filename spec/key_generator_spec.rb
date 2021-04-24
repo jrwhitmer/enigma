@@ -1,6 +1,7 @@
+require './spec/spec_helper'
 require './lib/key_generator'
 require './lib/key'
-require 'rspec'
+
 
 RSpec.describe Key do
 

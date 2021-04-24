@@ -1,6 +1,7 @@
+require './spec/spec_helper'
 require './lib/offset'
 require './lib/offset_generator'
-require 'rspec'
+
 
 RSpec.describe Offset do
 

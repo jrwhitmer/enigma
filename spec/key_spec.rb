@@ -1,5 +1,6 @@
+require './spec/spec_helper'
 require './lib/key'
-require 'rspec'
+
 
 RSpec.describe Key do
 

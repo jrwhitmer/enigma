@@ -70,6 +70,7 @@ class Shift
       value_set[character_value]
     end.join
   end
+  
   def shift_by_d(text)
     translate_text_to_values(text).map do |character_value|
       (character_value + d_shift.remainder(27)).remainder(27)
