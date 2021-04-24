@@ -131,6 +131,16 @@ RSpec.describe Shift do
     expect(shift.matching_character?(text[-1])).to eq(false)
   end
 
+  it 'can check if a value has a corresponding character' do
+    allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+    key = Key.new
+    offset = Offset.new("05-16-1998")
+    shift = Shift.new(key, offset)
+    text = "This is test text!"
+
+    expect(shift.matching_value?(text[-1])).to eq(false)
+  end
+
   it 'returns non-matching characters as same without shifting' do
     allow_any_instance_of(Key).to receive(:rand).and_return(4837)
     key = Key.new
@@ -138,7 +148,7 @@ RSpec.describe Shift do
     shift = Shift.new(key, offset)
     text = "This is test text!"
 
-    expect(shift.translate_a_values_to_text).to eq("znoyfoyfzkyzfzkcz!")
+    expect(shift.translate_a_values_to_text(text)).to eq("znoyfoyfzkyzfzkcz!")
   end
 
 end

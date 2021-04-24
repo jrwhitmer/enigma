@@ -33,9 +33,13 @@ class Shift
     !character_set[character].nil?
   end
 
+  def matching_value?(value)
+    !value_set[value].nil?
+  end
+
   def translate_text_to_values(text)
     text.chars.map do |character|
-      if matching_character?(character)
+      if matching_character?(character.downcase)
         character_set[character.downcase]
       else
         character
@@ -45,49 +49,81 @@ class Shift
 
   def shift_by_a(text)
     translate_text_to_values(text).map do |character_value|
-      (character_value + a_shift.remainder(27)).remainder(27)
+      if matching_value?(character_value)
+        (character_value + a_shift.remainder(27)).remainder(27)
+      else
+        character_value
+      end
     end
   end
 
   def translate_a_values_to_text(text)
-    translated = shift_by_a(text).map do |character_value|
-      value_set[character_value]
+    shift_by_a(text).map do |character_value|
+      if matching_value?(character_value)
+        value_set[character_value]
+      else
+        character_value
+      end
     end.join
   end
 
   def shift_by_b(text)
     translate_text_to_values(text).map do |character_value|
-      (character_value + b_shift.remainder(27)).remainder(27)
+      if matching_value?(character_value)
+        (character_value + b_shift.remainder(27)).remainder(27)
+      else
+        character_value
+      end
     end
   end
 
   def translate_b_values_to_text(text)
-    translated = shift_by_b(text).map do |character_value|
-      value_set[character_value]
+    shift_by_b(text).map do |character_value|
+      if matching_value?(character_value)
+        value_set[character_value]
+      else
+        character_value
+      end
     end.join
   end
 
   def shift_by_c(text)
     translate_text_to_values(text).map do |character_value|
-      (character_value + c_shift.remainder(27)).remainder(27)
+      if matching_value?(character_value)
+        (character_value + c_shift.remainder(27)).remainder(27)
+      else
+        character_value
+      end
     end
   end
 
   def translate_c_values_to_text(text)
-    translated = shift_by_c(text).map do |character_value|
-      value_set[character_value]
+    shift_by_c(text).map do |character_value|
+      if matching_value?(character_value)
+        value_set[character_value]
+      else
+        character_value
+      end
     end.join
   end
 
   def shift_by_d(text)
     translate_text_to_values(text).map do |character_value|
-      (character_value + d_shift.remainder(27)).remainder(27)
+      if matching_value?(character_value)
+        (character_value + d_shift.remainder(27)).remainder(27)
+      else
+        character_value
+      end
     end
   end
 
   def translate_d_values_to_text(text)
-    translated = shift_by_d(text).map do |character_value|
-      value_set[character_value]
+   shift_by_d(text).map do |character_value|
+     if matching_value?(character_value)
+       value_set[character_value]
+     else
+       character_value
+     end
     end.join
   end
 
