@@ -110,7 +110,7 @@ class Shift
   def shift_by_d(text)
     translate_text_to_values(text).map do |character_value|
       if matching_value?(character_value)
-        (character_value + d_shift.remainder(27)).remainder(27)
+        new_value = (character_value + d_shift.remainder(27)).remainder(27)
       else
         character_value
       end
