@@ -87,7 +87,7 @@ class Shift
       end
     end.join
   end
-  
+
   def shift_by_b(text)
     translate_text_to_values(text).map do |character_value|
       if matching_value?(character_value)
@@ -100,6 +100,26 @@ class Shift
 
   def translate_b_values_to_text(text)
     shift_by_b(text).map do |character_value|
+      if matching_value?(character_value)
+        value_set[character_value]
+      else
+        character_value
+      end
+    end.join
+  end
+
+  def unshift_by_b(text)
+    translate_text_to_values(text).map do |character_value|
+      if matching_value?(character_value)
+        (character_value - b_shift.remainder(27)).remainder(27)
+      else
+        character_value
+      end
+    end
+  end
+
+  def translate_unshifted_b_values_to_text(text)
+    unshift_by_b(text).map do |character_value|
       if matching_value?(character_value)
         value_set[character_value]
       else
@@ -128,6 +148,26 @@ class Shift
     end.join
   end
 
+  def unshift_by_c(text)
+    translate_text_to_values(text).map do |character_value|
+      if matching_value?(character_value)
+        (character_value - c_shift.remainder(27)).remainder(27)
+      else
+        character_value
+      end
+    end
+  end
+
+  def translate_unshifted_c_values_to_text(text)
+    unshift_by_c(text).map do |character_value|
+      if matching_value?(character_value)
+        value_set[character_value]
+      else
+        character_value
+      end
+    end.join
+  end
+
   def shift_by_d(text)
     translate_text_to_values(text).map do |character_value|
       if matching_value?(character_value)
@@ -145,6 +185,26 @@ class Shift
      else
        character_value
      end
+    end.join
+  end
+
+  def unshift_by_d(text)
+    translate_text_to_values(text).map do |character_value|
+      if matching_value?(character_value)
+        (character_value - d_shift.remainder(27)).remainder(27)
+      else
+        character_value
+      end
+    end
+  end
+
+  def translate_unshifted_d_values_to_text(text)
+    unshift_by_d(text).map do |character_value|
+      if matching_value?(character_value)
+        value_set[character_value]
+      else
+        character_value
+      end
     end.join
   end
 
