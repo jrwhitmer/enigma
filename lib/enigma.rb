@@ -1,6 +1,7 @@
 require './lib/shift'
 require './lib/offset'
 require './lib/key'
+require 'date'
 
 class Enigma
 
@@ -24,6 +25,12 @@ class Enigma
       end
       counter += 1
     end
-    encryption_message.join
+    date_class = Date.parse(date)
+    encryption_text = encryption_message.join
+    encrypt_hash = {
+      encryption: encryption_text,
+      key: key.key,
+      date: date_class.strftime("%d%m%y")
+    }
   end
 end

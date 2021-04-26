@@ -22,7 +22,7 @@ RSpec.describe Enigma do
       date = "16-05-1998"
       enigma = Enigma.new
 
-      expect(enigma.encrypt(message, key, date)).to eq("hfcvfyknhfgv!")
+      expect(enigma.encrypt(message, key, date)).to eq({encryption: "hfcvfyknhfgv!", key: "04837", date: "160598"})
     end
 
   end
