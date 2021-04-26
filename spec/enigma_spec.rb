@@ -45,8 +45,9 @@ RSpec.describe Enigma do
       message = "Blah di bleh!"
       key = Key.new
       date = "16-05-1998"
-    
-      expect(enigma.decrypt("hfcvfyknhfgv!", key, date)).to eq({
+      encrypted = enigma.encrypt(message, key, date)
+
+      expect(enigma.decrypt(encrypted[:encryption], key, date)).to eq({
         decryption: "blah di bleh!",
         key: "04837",
         date: "160598"
