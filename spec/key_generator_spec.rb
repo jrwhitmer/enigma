@@ -15,6 +15,13 @@ RSpec.describe Key do
      expect(key.generate_key.class).to eq(String)
    end
 
+   it 'can generates a random key' do
+     key = Key.new
+     allow(key).to receive(:rand).and_return(10000)
+
+     expect(key.generate_key).to eq("10000")
+   end
+
    it 'can return a key with padded/leading zeros' do
      key = Key.new
      allow(key).to receive(:rand).and_return(6421)
