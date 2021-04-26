@@ -8,7 +8,7 @@ RSpec.describe Enigma do
       message = "Blah di bleh!"
       key = Key.new
       date = "16-05-2003"
-      enigma = Enigma.new(message, key, date)
+      enigma = Enigma.new
 
       expect(enigma).to be_instance_of(Enigma)
     end
@@ -20,9 +20,9 @@ RSpec.describe Enigma do
       message = "Blah di bleh!"
       key = Key.new
       date = "16-05-1998"
-      enigma = Enigma.new(message, key, date)
+      enigma = Enigma.new
 
-      expect(enigma.encrypt).to eq("hfcvfyknhfgv!")
+      expect(enigma.encrypt(message, key, date)).to eq("hfcvfyknhfgv!")
     end
 
   end
