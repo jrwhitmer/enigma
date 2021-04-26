@@ -6,9 +6,9 @@ RSpec.describe Enigma do
   context 'instantiation' do
     it 'exists' do
       message = "Blah di bleh!"
-      key_1 = Key.new
+      key = Key.new
       date = "16-05-2003"
-      enigma = Enigma.new(message, key_1, date)
+      enigma = Enigma.new(message, key, date)
 
       expect(enigma).to be_instance_of(Enigma)
     end
@@ -18,9 +18,9 @@ RSpec.describe Enigma do
     it 'can encrypt text' do
       allow_any_instance_of(Key).to receive(:rand).and_return(4837)
       message = "Blah di bleh!"
-      key_1 = Key.new
+      key = Key.new
       date = "16-05-1998"
-      enigma = Enigma.new(message, key_1, date)
+      enigma = Enigma.new(message, key, date)
 
       expect(enigma.encrypt).to eq("hfcvfyknhfgv!")
     end
