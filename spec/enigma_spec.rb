@@ -5,9 +5,6 @@ require './lib/key'
 RSpec.describe Enigma do
   context 'instantiation' do
     it 'exists' do
-      message = "Blah di bleh!"
-      key = Key.new
-      date = "16-05-2003"
       enigma = Enigma.new
 
       expect(enigma).to be_instance_of(Enigma)

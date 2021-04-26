@@ -10,24 +10,56 @@ class Enigma
     @shift = Shift.new(key, offset)
   end
 
+  def a_shift?(counter)
+    counter == 0 || counter.remainder(4) == 0
+  end
+
+  def b_shift?(counter)
+    counter.remainder(4) == 1
+  end
+
+  def c_shift?(counter)
+    counter.remainder(4) == 2
+  end
+
+  def d_shift?(counter)
+    counter.remainder(4) == 3
+  end
+
+  def shift_char_by_a(character)
+    @encryption_message << @shift.translate_a_values_to_text(character)
+  end
+
+  def shift_char_by_b(character)
+    @encryption_message << @shift.translate_b_values_to_text(character)
+  end
+
+  def shift_char_by_c(character)
+    @encryption_message << @shift.translate_c_values_to_text(character)
+  end
+
+  def shift_char_by_d(character)
+    @encryption_message << @shift.translate_d_values_to_text(character)
+  end
+
   def encrypt(message, key, date)
     set_shift(message, key, date)
-    encryption_message = []
+    @encryption_message = []
     counter = 0
     message.chars.cycle(1) do |character|
-      if counter == 0 || counter.remainder(4) == 0
-        encryption_message << @shift.translate_a_values_to_text(character)
-      elsif counter.remainder(4) == 1
-        encryption_message << @shift.translate_b_values_to_text(character)
-      elsif counter.remainder(4) == 2
-        encryption_message << @shift.translate_c_values_to_text(character)
-      elsif counter.remainder(4) == 3
-        encryption_message << @shift.translate_d_values_to_text(character)
+      if a_shift?(counter)
+        shift_char_by_a(character)
+      elsif b_shift?(counter)
+        shift_char_by_b(character)
+      elsif c_shift?(counter)
+        shift_char_by_c(character)
+      elsif d_shift?(counter)
+        shift_char_by_d(character)
       end
       counter += 1
     end
     date_class = Date.parse(date)
-    encryption_text = encryption_message.join
+    encryption_text = @encryption_message.join
     encrypt_hash = {
       encryption: encryption_text,
       key: key.key,
