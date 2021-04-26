@@ -42,6 +42,11 @@ class Enigma
     @encryption_message << @shift.translate_d_values_to_text(character)
   end
 
+  def convert_date(date)
+    date_class = Date.parse(date)
+    date_class.strftime("%d%m%y")
+  end
+
   def encrypt(message, key, date)
     set_shift(message, key, date)
     @encryption_message = []
@@ -58,12 +63,11 @@ class Enigma
       end
       counter += 1
     end
-    date_class = Date.parse(date)
     encryption_text = @encryption_message.join
     encrypt_hash = {
       encryption: encryption_text,
       key: key.key,
-      date: date_class.strftime("%d%m%y")
+      date: convert_date(date)
     }
   end
 end
