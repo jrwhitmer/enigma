@@ -47,9 +47,7 @@ class Enigma
     date_class.strftime("%d%m%y")
   end
 
-  def encrypt(message, key, date)
-    set_shift(message, key, date)
-    @encryption_message = []
+  def shift_message(message, key, date)
     counter = 0
     message.chars.cycle(1) do |character|
       if a_shift?(counter)
@@ -63,6 +61,12 @@ class Enigma
       end
       counter += 1
     end
+  end
+
+  def encrypt(message, key, date)
+    set_shift(message, key, date)
+    @encryption_message = []
+    shift_message(message, key, date)
     encryption_text = @encryption_message.join
     encrypt_hash = {
       encryption: encryption_text,
