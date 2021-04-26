@@ -149,6 +149,9 @@ RSpec.describe Shift do
     text = "This is test text!"
 
     expect(shift.translate_a_values_to_text(text)).to eq("znoyfoyfzkyzfzkcz!")
+    expect(shift.translate_b_values_to_text(text)).to eq("nbcmucmunzmnunzrn!")
+    expect(shift.translate_c_values_to_text(text)).to eq("vjkubkubvguvbvgzv!")
+    expect(shift.translate_d_values_to_text(text)).to eq("gvwfnwfngsfgngskg!")
   end
 
 end
