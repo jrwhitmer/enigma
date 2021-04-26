@@ -22,5 +22,14 @@ RSpec.describe Enigma do
       expect(enigma.encrypt(message, key, date)).to eq({encryption: "hfcvfyknhfgv!", key: "04837", date: "160598"})
     end
 
+    it 'can encrypt a message using todays date as default' do
+      message = "Blah di bleh!"
+      allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+      key = Key.new
+      enigma = Enigma.new
+
+      expect(enigma.encrypt(message, key)).to eq({encryption: "", key: "04837", date: "260421"})
+    end
+
   end
 end
