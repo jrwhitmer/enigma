@@ -163,7 +163,7 @@ RSpec.describe Shift do
       expect(shift.unshift_by_a(text)).to eq([20, 8, 9, 19, 0, 9, 19, 0, 20, 5, 19, 20, 0, 20, 5, -3, 20, "!"])
     end
 
-    it 'can translate unshifted values to text' do
+    it 'can translate unshifted a values to text' do
       allow_any_instance_of(Key).to receive(:rand).and_return(4837)
       key = Key.new
       offset = Offset.new("05-16-1998")
@@ -172,5 +172,36 @@ RSpec.describe Shift do
 
       expect(shift.translate_unshifted_a_values_to_text(text)).to eq("this is test text!")
     end
+
+    it 'can translate unshifted b values to text' do
+      allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+      key = Key.new
+      offset = Offset.new("05-16-1998")
+      shift = Shift.new(key, offset)
+      text = "nbcmucmunzmnunzrn!"
+
+      expect(shift.translate_unshifted_b_values_to_text(text)).to eq("this is test text!")
+    end
+
+    it 'can translate unshifted c values to text' do
+      allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+      key = Key.new
+      offset = Offset.new("05-16-1998")
+      shift = Shift.new(key, offset)
+      text = "vjkubkubvguvbvgzv!"
+
+      expect(shift.translate_unshifted_c_values_to_text(text)).to eq("this is test text!")
+    end
+
+    it 'can translate unshifted d values to text' do
+      allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+      key = Key.new
+      offset = Offset.new("05-16-1998")
+      shift = Shift.new(key, offset)
+      text = "gvwfnwfngsfgngskg!"
+
+      expect(shift.translate_unshifted_d_values_to_text(text)).to eq("this is test text!")
+    end  
+
   end
 end

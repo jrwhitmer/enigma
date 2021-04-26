@@ -57,6 +57,17 @@ class Shift
     end
   end
 
+
+  def translate_a_values_to_text(text)
+    shift_by_a(text).map do |character_value|
+      if matching_value?(character_value)
+        value_set[character_value]
+      else
+        character_value
+      end
+    end.join
+  end
+
   def unshift_by_a(text)
     translate_text_to_values(text).map do |character_value|
       if matching_value?(character_value)
@@ -76,17 +87,7 @@ class Shift
       end
     end.join
   end
-
-  def translate_a_values_to_text(text)
-    shift_by_a(text).map do |character_value|
-      if matching_value?(character_value)
-        value_set[character_value]
-      else
-        character_value
-      end
-    end.join
-  end
-
+  
   def shift_by_b(text)
     translate_text_to_values(text).map do |character_value|
       if matching_value?(character_value)
