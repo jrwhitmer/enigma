@@ -72,6 +72,6 @@ class Enigma
       encryption: encryption_text,
       key: key.key,
       date: convert_date(date)
-    }
+      }
   end
 end
