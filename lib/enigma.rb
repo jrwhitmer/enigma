@@ -4,10 +4,25 @@ require './lib/key'
 require 'date'
 
 class Enigma
+  attr_reader :key,
+              :date,
+              :converted_key
+
+  def convert_key_to_object(key)
+    @converted_key = Key.new(key)
+  end
 
   def set_shift(message, key, date)
     offset = Offset.new(date)
+    @key = key.key
+    @date = convert_date(date)
     @shift = Shift.new(key, offset)
+  end
+
+  def set_shift_decryption(message, converted_key, date)
+    offset = Offset.new(date)
+    @date = convert_date(date)
+    @shift = Shift.new(converted_key, offset)
   end
 
   def a_shift?(counter)
@@ -63,7 +78,7 @@ class Enigma
     end
   end
 
-  def encrypt(message, key = Key.new, date = Date.today.strftime("%d-%m-%Y"))
+  def encrypt(message, key = Key.new, date =    Date.today.strftime("%d-%m-%Y"))
     set_shift(message, key, date)
     @encryption_message = []
     shift_message(message, key, date)
@@ -91,7 +106,7 @@ class Enigma
     @decryption_message << @shift.translate_unshifted_d_values_to_text(character)
   end
 
-  def unshift_message(message, key, date)
+  def unshift_message(message, converted_key, date)
     counter = 0
     message.chars.cycle(1) do |character|
       if a_shift?(counter)
@@ -107,15 +122,16 @@ class Enigma
     end
   end
 
-  def decrypt(message, key = Key.new, date = Date.today.strftime("%d-%m-%Y"))
-    set_shift(message, key, date)
+  def decrypt(message, key, date = Date.today.strftime("%d-%m-%Y"))
+    @converted_key = convert_key_to_object(key)
+    set_shift_decryption(message, converted_key, date)
     @decryption_message = []
-    unshift_message(message, key, date)
+    unshift_message(message, converted_key, date)
     decryption_text = @decryption_message.join
     decrypt_hash = {
       decryption: decryption_text,
-      key: key.key,
-      date: convert_date(date)
+      key: converted_key.key,
+      date: @date
       }
   end
 end

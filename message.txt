@@ -1,0 +1,1 @@
+This is a message that will be encrypted so our enemies cannot understand us. This will have a random key and the date used will be today. You will not be able to crack this one without that information. Transmission end.
