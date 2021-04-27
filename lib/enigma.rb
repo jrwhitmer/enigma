@@ -5,10 +5,11 @@ require 'date'
 
 class Enigma
   attr_reader :key,
-              :date
+              :date,
+              :converted_key
 
   def convert_key_to_object(key)
-    converted_key = Key.new(key)
+    @converted_key = Key.new(key)
   end
 
   def set_shift(message, key, date)
@@ -122,7 +123,7 @@ class Enigma
   end
 
   def decrypt(message, key, date = Date.today.strftime("%d-%m-%Y"))
-    converted_key = convert_key_to_object(key)
+    @converted_key = convert_key_to_object(key)
     set_shift_decryption(message, converted_key, date)
     @decryption_message = []
     unshift_message(message, converted_key, date)
@@ -130,7 +131,7 @@ class Enigma
     decrypt_hash = {
       decryption: decryption_text,
       key: converted_key.key,
-      date: convert_date(date)
+      date: @date
       }
   end
 end
