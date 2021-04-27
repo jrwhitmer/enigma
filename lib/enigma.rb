@@ -63,13 +63,57 @@ class Enigma
     end
   end
 
-  def encrypt(message, key, date)
+  def encrypt(message, key = Key.new, date = Date.today.strftime("%d-%m-%Y"))
     set_shift(message, key, date)
     @encryption_message = []
     shift_message(message, key, date)
     encryption_text = @encryption_message.join
     encrypt_hash = {
       encryption: encryption_text,
+      key: key.key,
+      date: convert_date(date)
+      }
+  end
+
+  def unshift_char_by_a(character)
+    @decryption_message << @shift.translate_unshifted_a_values_to_text(character)
+  end
+
+  def unshift_char_by_b(character)
+    @decryption_message << @shift.translate_unshifted_b_values_to_text(character)
+  end
+
+  def unshift_char_by_c(character)
+    @decryption_message << @shift.translate_unshifted_c_values_to_text(character)
+  end
+
+  def unshift_char_by_d(character)
+    @decryption_message << @shift.translate_unshifted_d_values_to_text(character)
+  end
+
+  def unshift_message(message, key, date)
+    counter = 0
+    message.chars.cycle(1) do |character|
+      if a_shift?(counter)
+        unshift_char_by_a(character)
+      elsif b_shift?(counter)
+        unshift_char_by_b(character)
+      elsif c_shift?(counter)
+        unshift_char_by_c(character)
+      elsif d_shift?(counter)
+        unshift_char_by_d(character)
+      end
+      counter += 1
+    end
+  end
+
+  def decrypt(message, key = Key.new, date = Date.today.strftime("%d-%m-%Y"))
+    set_shift(message, key, date)
+    @decryption_message = []
+    unshift_message(message, key, date)
+    decryption_text = @decryption_message.join
+    decrypt_hash = {
+      decryption: decryption_text,
       key: key.key,
       date: convert_date(date)
       }

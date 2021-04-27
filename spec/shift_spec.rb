@@ -59,99 +59,149 @@ RSpec.describe Shift do
 
       expect(shift.translate_a_values_to_text(text)).to eq("znoyfoyfzkyzfzkcz")
     end
+
+    it 'can shift text by b_shift amount(integer array)' do
+      allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+      key = Key.new
+      offset = Offset.new("05-16-1998")
+      shift = Shift.new(key, offset)
+      text = "This is test text"
+
+      expect(shift.shift_by_b(text)).to eq([14, 2, 3, 13, 21, 3, 13, 21, 14, 26, 13, 14, 21, 14, 26, 18, 14])
+    end
+
+    it 'can translate text shifted by b_shift amount' do
+      allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+      key = Key.new
+      offset = Offset.new("05-16-1998")
+      shift = Shift.new(key, offset)
+      text = "This is test text"
+
+      expect(shift.translate_b_values_to_text(text)).to eq("nbcmucmunzmnunzrn")
+    end
+
+    it 'can shift text by c_shift amount(integer array)' do
+      allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+      key = Key.new
+      offset = Offset.new("05-16-1998")
+      shift = Shift.new(key, offset)
+      text = "This is test text"
+
+      expect(shift.shift_by_c(text)).to eq([22, 10, 11, 21, 2, 11, 21, 2, 22, 7, 21, 22, 2, 22, 7, 26, 22])
+    end
+
+    it 'can translate text shifted by c_shift amount' do
+      allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+      key = Key.new
+      offset = Offset.new("05-16-1998")
+      shift = Shift.new(key, offset)
+      text = "This is test text"
+
+      expect(shift.translate_c_values_to_text(text)).to eq("vjkubkubvguvbvgzv")
+    end
+
+    it 'can shift text by d_shift amount(integer array)' do
+      allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+      key = Key.new
+      offset = Offset.new("05-16-1998")
+      shift = Shift.new(key, offset)
+      text = "This is test text"
+
+      expect(shift.shift_by_d(text)).to eq([7, 22, 23, 6, 14, 23, 6, 14, 7, 19, 6, 7, 14, 7, 19, 11, 7])
+    end
+
+    it 'can translate text shifted by d_shift amount' do
+      allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+      key = Key.new
+      offset = Offset.new("05-16-1998")
+      shift = Shift.new(key, offset)
+      text = "This is test text"
+
+      expect(shift.translate_d_values_to_text(text)).to eq("gvwfnwfngsfgngskg")
+    end
+
+    it 'can check if character exists in our set' do
+      allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+      key = Key.new
+      offset = Offset.new("05-16-1998")
+      shift = Shift.new(key, offset)
+      text = "This is test text!"
+
+      expect(shift.matching_character?(text[-1])).to eq(false)
+    end
+
+    it 'can check if a value has a corresponding character' do
+      allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+      key = Key.new
+      offset = Offset.new("05-16-1998")
+      shift = Shift.new(key, offset)
+      text = "This is test text!"
+
+      expect(shift.matching_value?(text[-1])).to eq(false)
+    end
+
+    it 'returns non-matching characters as same without shifting' do
+      allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+      key = Key.new
+      offset = Offset.new("05-16-1998")
+      shift = Shift.new(key, offset)
+      text = "This is test text!"
+
+      expect(shift.translate_a_values_to_text(text)).to eq("znoyfoyfzkyzfzkcz!")
+      expect(shift.translate_b_values_to_text(text)).to eq("nbcmucmunzmnunzrn!")
+      expect(shift.translate_c_values_to_text(text)).to eq("vjkubkubvguvbvgzv!")
+      expect(shift.translate_d_values_to_text(text)).to eq("gvwfnwfngsfgngskg!")
+    end
+
+    it 'can unshift by a_shift amount' do
+      allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+      key = Key.new
+      offset = Offset.new("05-16-1998")
+      shift = Shift.new(key, offset)
+      text = "znoyfoyfzkyzfzkcz!"
+
+      expect(shift.unshift_by_a(text)).to eq([20, 8, 9, 19, 0, 9, 19, 0, 20, 5, 19, 20, 0, 20, 5, -3, 20, "!"])
+    end
+
+    it 'can translate unshifted a values to text' do
+      allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+      key = Key.new
+      offset = Offset.new("05-16-1998")
+      shift = Shift.new(key, offset)
+      text = "znoyfoyfzkyzfzkcz!"
+
+      expect(shift.translate_unshifted_a_values_to_text(text)).to eq("this is test text!")
+    end
+
+    it 'can translate unshifted b values to text' do
+      allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+      key = Key.new
+      offset = Offset.new("05-16-1998")
+      shift = Shift.new(key, offset)
+      text = "nbcmucmunzmnunzrn!"
+
+      expect(shift.translate_unshifted_b_values_to_text(text)).to eq("this is test text!")
+    end
+
+    it 'can translate unshifted c values to text' do
+      allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+      key = Key.new
+      offset = Offset.new("05-16-1998")
+      shift = Shift.new(key, offset)
+      text = "vjkubkubvguvbvgzv!"
+
+      expect(shift.translate_unshifted_c_values_to_text(text)).to eq("this is test text!")
+    end
+
+    it 'can translate unshifted d values to text' do
+      allow_any_instance_of(Key).to receive(:rand).and_return(4837)
+      key = Key.new
+      offset = Offset.new("05-16-1998")
+      shift = Shift.new(key, offset)
+      text = "gvwfnwfngsfgngskg!"
+
+      expect(shift.translate_unshifted_d_values_to_text(text)).to eq("this is test text!")
+    end  
+
   end
-
-  it 'can shift text by b_shift amount(integer array)' do
-    allow_any_instance_of(Key).to receive(:rand).and_return(4837)
-    key = Key.new
-    offset = Offset.new("05-16-1998")
-    shift = Shift.new(key, offset)
-    text = "This is test text"
-
-    expect(shift.shift_by_b(text)).to eq([14, 2, 3, 13, 21, 3, 13, 21, 14, 26, 13, 14, 21, 14, 26, 18, 14])
-  end
-
-  it 'can translate text shifted by b_shift amount' do
-    allow_any_instance_of(Key).to receive(:rand).and_return(4837)
-    key = Key.new
-    offset = Offset.new("05-16-1998")
-    shift = Shift.new(key, offset)
-    text = "This is test text"
-
-    expect(shift.translate_b_values_to_text(text)).to eq("nbcmucmunzmnunzrn")
-  end
-
-  it 'can shift text by c_shift amount(integer array)' do
-    allow_any_instance_of(Key).to receive(:rand).and_return(4837)
-    key = Key.new
-    offset = Offset.new("05-16-1998")
-    shift = Shift.new(key, offset)
-    text = "This is test text"
-
-    expect(shift.shift_by_c(text)).to eq([22, 10, 11, 21, 2, 11, 21, 2, 22, 7, 21, 22, 2, 22, 7, 26, 22])
-  end
-
-  it 'can translate text shifted by c_shift amount' do
-    allow_any_instance_of(Key).to receive(:rand).and_return(4837)
-    key = Key.new
-    offset = Offset.new("05-16-1998")
-    shift = Shift.new(key, offset)
-    text = "This is test text"
-
-    expect(shift.translate_c_values_to_text(text)).to eq("vjkubkubvguvbvgzv")
-  end
-
-  it 'can shift text by d_shift amount(integer array)' do
-    allow_any_instance_of(Key).to receive(:rand).and_return(4837)
-    key = Key.new
-    offset = Offset.new("05-16-1998")
-    shift = Shift.new(key, offset)
-    text = "This is test text"
-
-    expect(shift.shift_by_d(text)).to eq([7, 22, 23, 6, 14, 23, 6, 14, 7, 19, 6, 7, 14, 7, 19, 11, 7])
-  end
-
-  it 'can translate text shifted by d_shift amount' do
-    allow_any_instance_of(Key).to receive(:rand).and_return(4837)
-    key = Key.new
-    offset = Offset.new("05-16-1998")
-    shift = Shift.new(key, offset)
-    text = "This is test text"
-
-    expect(shift.translate_d_values_to_text(text)).to eq("gvwfnwfngsfgngskg")
-  end
-
-  it 'can check if character exists in our set' do
-    allow_any_instance_of(Key).to receive(:rand).and_return(4837)
-    key = Key.new
-    offset = Offset.new("05-16-1998")
-    shift = Shift.new(key, offset)
-    text = "This is test text!"
-
-    expect(shift.matching_character?(text[-1])).to eq(false)
-  end
-
-  it 'can check if a value has a corresponding character' do
-    allow_any_instance_of(Key).to receive(:rand).and_return(4837)
-    key = Key.new
-    offset = Offset.new("05-16-1998")
-    shift = Shift.new(key, offset)
-    text = "This is test text!"
-
-    expect(shift.matching_value?(text[-1])).to eq(false)
-  end
-
-  it 'returns non-matching characters as same without shifting' do
-    allow_any_instance_of(Key).to receive(:rand).and_return(4837)
-    key = Key.new
-    offset = Offset.new("05-16-1998")
-    shift = Shift.new(key, offset)
-    text = "This is test text!"
-
-    expect(shift.translate_a_values_to_text(text)).to eq("znoyfoyfzkyzfzkcz!")
-    expect(shift.translate_b_values_to_text(text)).to eq("nbcmucmunzmnunzrn!")
-    expect(shift.translate_c_values_to_text(text)).to eq("vjkubkubvguvbvgzv!")
-    expect(shift.translate_d_values_to_text(text)).to eq("gvwfnwfngsfgngskg!")
-  end
-
 end
