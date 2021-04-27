@@ -52,5 +52,18 @@ RSpec.describe Enigma do
         date: "160598"
         })
     end
+
+    it 'can decrypt text with a default date of today' do
+      enigma = Enigma.new
+      message = "Blah di bleh!"
+      key = "04837"
+      encrypted = "jjgshbokjjks!"
+
+      expect(enigma.decrypt(encrypted, key)).to eq({
+        decryption: "blah di bleh!",
+        key: "04837",
+        date: "270421"
+        })
+    end
   end
 end
