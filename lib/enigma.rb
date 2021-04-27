@@ -20,7 +20,6 @@ class Enigma
 
   def set_shift_decryption(message, converted_key, date)
     offset = Offset.new(date)
-    converted_key = converted_key.key
     @date = convert_date(date)
     @shift = Shift.new(converted_key, offset)
   end
