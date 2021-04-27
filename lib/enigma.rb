@@ -4,9 +4,13 @@ require './lib/key'
 require 'date'
 
 class Enigma
+  attr_reader :key,
+              :date
 
   def set_shift(message, key, date)
     offset = Offset.new(date)
+    @key = key.key
+    @date = convert_date(date)
     @shift = Shift.new(key, offset)
   end
 
@@ -63,7 +67,7 @@ class Enigma
     end
   end
 
-  def encrypt(message, key = Key.new, date = Date.today.strftime("%d-%m-%Y"))
+  def encrypt(message, key = Key.new, date =    Date.today.strftime("%d-%m-%Y"))
     set_shift(message, key, date)
     @encryption_message = []
     shift_message(message, key, date)
@@ -107,7 +111,7 @@ class Enigma
     end
   end
 
-  def decrypt(message, key = Key.new, date = Date.today.strftime("%d-%m-%Y"))
+  def decrypt(message, key, date = Date.today.strftime("%d-%m-%Y"))
     set_shift(message, key, date)
     @decryption_message = []
     unshift_message(message, key, date)
