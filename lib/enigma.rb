@@ -78,7 +78,7 @@ class Enigma
     end
   end
 
-  def encrypt(message, key = Key.new, date =    Date.today.strftime("%d-%m-%Y"))
+  def encrypt(message, key = Key.new, date = Date.today.strftime("%d-%m-%Y"))
     set_shift(message, key, date)
     @encryption_message = []
     shift_message(message, key, date)
