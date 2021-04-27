@@ -8,7 +8,9 @@ message_file = File.open("#{files[0]}", "r")
 
 message = message_file.read
 
-encrypted_message = enigma.encrypt(message)
+encrypted_message_hash = enigma.encrypt(message)
+
+encrypted_message = encrypted_message_hash[:encryption]
 
 encrypted_file = File.open("#{files[1]}", "w")
 

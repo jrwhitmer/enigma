@@ -41,13 +41,12 @@ RSpec.describe Enigma do
 
     it 'can decrypt text' do
       enigma = Enigma.new
-      allow_any_instance_of(Key).to receive(:rand).and_return(4837)
       message = "Blah di bleh!"
-      key = Key.new
+      key = "04637"
       date = "16-05-1998"
-      encrypted = enigma.encrypt(message, key, date)
+      encrypted = "hfcvfyknhfgv!"
 
-      expect(enigma.decrypt(encrypted[:encryption], key, date)).to eq({
+      expect(enigma.decrypt(encrypted, key, date)).to eq({
         decryption: "blah di bleh!",
         key: "04837",
         date: "160598"
